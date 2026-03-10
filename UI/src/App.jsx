@@ -1,14 +1,35 @@
 import { useState } from 'react'
-import FormPage from './page/FormPage'
+import { createBrowserRouter, 
+  Navigate, 
+  RouterProvider } from "react-router-dom";
+import FormPage from './page/Registration'
 
+import HomePage from "./page/Home";
+import RegistrationPage from "./page/Registration"
+
+
+const routes = createBrowserRouter([
+  {
+    path: '/',
+    element: <Navigate to="/home" replace />
+  },
+  {
+    path: '/home',
+    element: <HomePage />
+  },
+  {
+    path:"/registration",
+    element:<RegistrationPage/>
+  }
+])
 
 function App() {  
 
-  return (
-    <>
-      <FormPage/>
-    </>
-  )
+ 
+   return (
+    <RouterProvider router={routes} />
+    
+  );
 }
 
 export default App
