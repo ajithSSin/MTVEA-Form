@@ -1,16 +1,13 @@
-import React from 'react'
-
-import Navbar from '../nav/NavBar'
-import BannerSlider from './BannerSlider'
+import Navbar from "../nav/NavBar";
+import BannerSlider from "./BannerSlider"
 
 const HomePage = () => {
   return (
     <>
-    <Navbar/>
-    <BannerSlider/> {/**Hero Section */}    
-    
+      <Navbar />         
+      <BannerSlider />      
     </>
-  )
-}
+  );
+};
 
-export default HomePage
+export default HomePage;

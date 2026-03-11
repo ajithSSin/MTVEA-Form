@@ -1,35 +1,29 @@
-import { useState } from 'react'
-import { createBrowserRouter, 
-  Navigate, 
-  RouterProvider } from "react-router-dom";
-import FormPage from './page/Registration'
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate
+} from "react-router-dom";
 
 import HomePage from "./page/Home";
-import RegistrationPage from "./page/Registration"
+import RegistrationPage from "./page/Registration";
 
+function App() {
 
-const routes = createBrowserRouter([
-  {
-    path: '/',
-    element: <Navigate to="/home" replace />
-  },
-  {
-    path: '/home',
-    element: <HomePage />
-  },
-  {
-    path:"/registration",
-    element:<RegistrationPage/>
-  }
-])
+  return (
+    <Router>
+      <Routes>
 
-function App() {  
+        {/* redirect root */}
+        <Route path="/" element={<Navigate to="/home" replace />} />
 
- 
-   return (
-    <RouterProvider router={routes} />
-    
+        {/* pages */}
+        <Route path="/home" element={<HomePage />} />
+        <Route path="/registration" element={<RegistrationPage />} />
+
+      </Routes>
+    </Router>
   );
 }
 
-export default App
+export default App;
